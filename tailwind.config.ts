@@ -19,6 +19,51 @@ export default {
       },
       white: "#FFFFFF",
     },
+    fontFamily: {
+      sans: ["var(--font-plus-jakarta-sans)"],
+    },
+    fontSize: {
+      "preset-1": [
+        "3.5rem",
+        {
+          lineHeight: "1.25",
+          letterSpacing: "-1px",
+          fontWeight: "700",
+        },
+      ],
+      "preset-2": [
+        "1.5rem",
+        {
+          lineHeight: "1.25",
+          letterSpacing: "-1px",
+          fontWeight: "700",
+        },
+      ],
+      "preset-3": [
+        "1.125rem",
+        {
+          lineHeight: "1.25",
+          letterSpacing: "-1px",
+          fontWeight: "700",
+        },
+      ],
+      "preset-4": [
+        "1rem",
+        {
+          lineHeight: "1.5",
+          letterSpacing: "0",
+          fontWeight: "500",
+        },
+      ],
+      "preset-5": [
+        "0.875rem",
+        {
+          lineHeight: "1.5",
+          letterSpacing: "0",
+          fontWeight: "500",
+        },
+      ],
+    },
     spacing: {
       100: "0.5rem",
       150: "0.75rem",
