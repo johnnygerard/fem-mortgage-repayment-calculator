@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
-const TITLE = "placeholder | Frontend Mentor";
-const DESCRIPTION = "Frontend Mentor placeholder challenge";
+const TITLE = "Mortgage Repayment Calculator | Frontend Mentor";
+const DESCRIPTION = "Frontend Mentor challenge: Mortgage repayment calculator";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -24,15 +25,23 @@ export const metadata: Metadata = {
   },
 };
 
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta-sans",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${plusJakartaSans.variable} font-sans antialiased`}
+    >
       <body
-        className={`grid min-h-screen min-w-min place-content-center px-[1.5rem] py-[2rem] antialiased`}
+        className={`grid min-h-screen min-w-min place-content-center px-[1.5rem] py-[2rem]`}
       >
         <div role="main">{children}</div>
         <noscript>
