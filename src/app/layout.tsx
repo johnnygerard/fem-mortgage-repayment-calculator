@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const TITLE = "placeholder | Frontend Mentor";
-const DESCRIPTION = "Frontend Mentor placeholder challenge";
+const TITLE = "Mortgage Repayment Calculator | Frontend Mentor";
+const DESCRIPTION = "Frontend Mentor challenge: Mortgage repayment calculator";
 
 export const metadata: Metadata = {
   title: TITLE,
