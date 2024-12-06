@@ -1,6 +1,7 @@
-# Frontend Mentor | placeholder
+# Frontend Mentor | Mortgage Repayment Calculator
 
-This is my solution to the [placeholder](https://www.frontendmentor.io/challenges/placeholder)
+This is my solution to
+the [Mortgage repayment calculator challenge](https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73)
 from [Frontend Mentor](https://www.frontendmentor.io/).
 
 ![project status](https://img.shields.io/badge/status-work%20in%20progress-red?style=for-the-badge)
