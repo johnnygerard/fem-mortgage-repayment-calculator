@@ -4,7 +4,7 @@ import { MortgageData } from "../types/mortgage-data";
 @Injectable({
   providedIn: "root",
 })
-export class MortgageService {
+export class MortgageCalculatorService {
   compute(
     principal: number,
     term: number,

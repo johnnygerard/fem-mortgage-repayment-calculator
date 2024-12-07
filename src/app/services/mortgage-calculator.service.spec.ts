@@ -8,14 +8,14 @@ import {
   MIN_PRINCIPAL,
   MIN_TERM,
 } from "../constants/mortgage-limits";
-import { MortgageService } from "./mortgage.service";
+import { MortgageCalculatorService } from "./mortgage-calculator.service";
 
-describe("MortgageService", () => {
-  let service: MortgageService;
+describe("MortgageCalculatorService", () => {
+  let service: MortgageCalculatorService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MortgageService);
+    service = TestBed.inject(MortgageCalculatorService);
   });
 
   it("should be created", () => {
