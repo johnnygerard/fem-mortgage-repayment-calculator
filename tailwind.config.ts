@@ -7,6 +7,7 @@ export default {
   theme: {
     colors: {
       lime: "#D8DB2F",
+      "lime-tint": "#ECED97",
       red: "#D73328",
       "slate-100": "#E4F4FD",
       "slate-300": "#9ABED5",
@@ -60,6 +61,9 @@ export default {
         },
       ],
     },
+    backgroundImage: {
+      tint: "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))",
+    },
     screens: {
       tb: "48em", // Tablet
       dt: "90em", // Desktop
@@ -71,6 +75,9 @@ export default {
       300: "1.5rem",
       400: "2rem",
       500: "2.5rem",
+    },
+    transitionProperty: {
+      bg: "background-color",
     },
   },
   plugins: [
