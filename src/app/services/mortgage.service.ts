@@ -1,29 +1,24 @@
-import { Injectable } from "@angular/core";
+import { inject, Injectable, signal } from "@angular/core";
+import { MortgageInput } from "../types/mortgage-input";
+import { MortgageOutput } from "../types/mortgage-output";
+import { MortgageCalculatorService } from "./mortgage-calculator.service";
 
 @Injectable({
   providedIn: "root",
 })
 export class MortgageService {
-  compute(
-    principal: number,
-    term: number,
-    interestRate: number,
-    interestOnly: boolean,
-  ): { monthly: number; total: number } {
-    const monthlyInterestRate = interestRate / 100 / 12;
-    const months = term * 12;
-    const monthlyRepayment =
-      (principal *
-        monthlyInterestRate *
-        Math.pow(1 + monthlyInterestRate, months)) /
-      (Math.pow(1 + monthlyInterestRate, months) - 1);
-    const totalRepayment = monthlyRepayment * months;
+  #results = signal<MortgageOutput | null>(null);
+  #calculator = inject(MortgageCalculatorService);
 
-    if (interestOnly) {
-      const totalInterest = totalRepayment - principal;
-      return { monthly: totalInterest / months, total: totalInterest };
-    }
+  get results() {
+    return this.#results.asReadonly();
+  }
 
-    return { monthly: monthlyRepayment, total: totalRepayment };
+  requestResults(input: MortgageInput): void {
+    this.#results.set(this.#calculator.compute(input));
+  }
+
+  clearResults(): void {
+    this.#results.set(null);
   }
 }
