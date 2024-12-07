@@ -32,14 +32,12 @@ describe("MortgageCalculatorService", () => {
       min: MIN_INTEREST_RATE,
       max: MAX_INTEREST_RATE,
     });
-    const INTEREST_ONLY = false;
-
-    const { monthly, total } = service.compute(
+    const { monthly, total } = service.compute({
       principal,
       term,
       interestRate,
-      INTEREST_ONLY,
-    );
+      interestOnly: false,
+    });
 
     expect(monthly * term * 12).toBeCloseTo(total);
 

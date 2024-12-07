@@ -1,16 +1,17 @@
 import { Injectable } from "@angular/core";
+import { MortgageInput } from "../types/mortgage-input";
 import { MortgageOutput } from "../types/mortgage-output";
 
 @Injectable({
   providedIn: "root",
 })
 export class MortgageCalculatorService {
-  compute(
-    principal: number,
-    term: number,
-    interestRate: number,
-    interestOnly: boolean,
-  ): MortgageOutput {
+  compute({
+    principal,
+    term,
+    interestRate,
+    interestOnly,
+  }: MortgageInput): MortgageOutput {
     const monthlyInterestRate = interestRate / 100 / 12;
     const months = term * 12;
     const monthlyRepayment =
