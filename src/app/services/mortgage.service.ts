@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { MortgageData } from "../types/mortgage-data";
 
 @Injectable({
   providedIn: "root",
@@ -9,7 +10,7 @@ export class MortgageService {
     term: number,
     interestRate: number,
     interestOnly: boolean,
-  ): { monthly: number; total: number } {
+  ): MortgageData {
     const monthlyInterestRate = interestRate / 100 / 12;
     const months = term * 12;
     const monthlyRepayment =
@@ -21,9 +22,17 @@ export class MortgageService {
 
     if (interestOnly) {
       const totalInterest = totalRepayment - principal;
-      return { monthly: totalInterest / months, total: totalInterest };
+      return {
+        monthly: totalInterest / months,
+        total: totalInterest,
+        interestOnly,
+      };
     }
 
-    return { monthly: monthlyRepayment, total: totalRepayment };
+    return {
+      monthly: monthlyRepayment,
+      total: totalRepayment,
+      interestOnly,
+    };
   }
 }
