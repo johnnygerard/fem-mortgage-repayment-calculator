@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { RadioIndicatorComponent } from './radio-indicator.component';
+import { RadioIndicatorComponent } from "./radio-indicator.component";
 
-describe('RadioIndicatorComponent', () => {
+describe("RadioIndicatorComponent", () => {
   let component: RadioIndicatorComponent;
   let fixture: ComponentFixture<RadioIndicatorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RadioIndicatorComponent]
-    })
-    .compileComponents();
+      imports: [RadioIndicatorComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RadioIndicatorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
