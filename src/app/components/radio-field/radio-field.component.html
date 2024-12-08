@@ -1,0 +1,13 @@
+<label
+  [class]="isChecked() ? 'border-lime bg-[#D8DB2F26]' : 'border-slate-500'"
+  class="flex h-[3rem] w-full cursor-pointer items-center gap-200 rounded border px-200 text-preset-3 text-slate-900 transition-colors duration-300 ease-out focus-within:border-lime hover:border-lime"
+>
+  <app-radio-indicator [isChecked]="isChecked()" />
+  <input
+    [formControl]="control()"
+    [value]="value()"
+    class="absolute appearance-none"
+    type="radio"
+  />
+  <span>{{ label() }}</span>
+</label>
