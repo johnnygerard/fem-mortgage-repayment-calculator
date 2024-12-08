@@ -16,6 +16,11 @@ export default {
       "slate-900": "#133041",
       white: "#FFFFFF",
     },
+    extend: {
+      transitionProperty: {
+        bg: "background-color",
+      },
+    },
     fontFamily: {
       sans: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans],
     },
@@ -75,9 +80,6 @@ export default {
       300: "1.5rem",
       400: "2rem",
       500: "2.5rem",
-    },
-    transitionProperty: {
-      bg: "background-color",
     },
   },
   plugins: [
