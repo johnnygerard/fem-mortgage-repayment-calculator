@@ -1,0 +1,17 @@
+<label class="w-full">
+  <span class="text-preset-4 text-slate-700">{{ label() }}</span>
+  <div
+    [class]="unit().position === 'left' ? 'flex-row-reverse' : 'flex-row'"
+    class="mt-150 flex h-[3rem] items-center rounded border border-slate-500 bg-slate-100 text-preset-3 focus-within:border-lime focus-within:bg-lime hover:border-slate-900"
+  >
+    <input
+      [class]="unit().position === 'left' ? 'rounded-r' : 'rounded-l'"
+      [formControl]="control()"
+      class="peer h-full grow px-200 outline-none"
+      type="number"
+    />
+    <span class="px-200 text-slate-700 peer-focus:text-slate-900">{{
+      unit().symbol
+    }}</span>
+  </div>
+</label>
