@@ -33,6 +33,14 @@ export default {
           fontWeight: 700,
         },
       ],
+      "preset-1-mb": [
+        "2.5rem",
+        {
+          lineHeight: "normal",
+          letterSpacing: "-1px",
+          fontWeight: 700,
+        },
+      ],
       "preset-2": [
         "1.5rem",
         {
