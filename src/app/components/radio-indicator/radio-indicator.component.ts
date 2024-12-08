@@ -4,11 +4,7 @@ import { ChangeDetectionStrategy, Component, input } from "@angular/core";
   selector: "app-radio-indicator",
   imports: [],
   templateUrl: "./radio-indicator.component.html",
-  styles: `
-    :host {
-      display: block;
-    }
-  `,
+  host: { class: "relative" },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RadioIndicatorComponent {
