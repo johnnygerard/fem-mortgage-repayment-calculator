@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
-import { NonNullableFormBuilder, Validators } from "@angular/forms";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { MortgageCalculatorComponent } from "./components/mortgage-calculator/mortgage-calculator.component";
 import { MortgageResultsComponent } from "./components/mortgage-results/mortgage-results.component";
 
@@ -13,11 +12,4 @@ import { MortgageResultsComponent } from "./components/mortgage-results/mortgage
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-  form = inject(NonNullableFormBuilder).group({
-    principal: ["", [Validators.required]],
-    term: ["", [Validators.required]],
-    interestRate: ["", [Validators.required]],
-    chargeType: ["", [Validators.required]],
-  });
-}
+export class AppComponent {}
