@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { RadioFieldComponent } from './radio-field.component';
+import { RadioFieldComponent } from "./radio-field.component";
 
-describe('RadioFieldComponent', () => {
+describe("RadioFieldComponent", () => {
   let component: RadioFieldComponent;
   let fixture: ComponentFixture<RadioFieldComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RadioFieldComponent]
-    })
-    .compileComponents();
+      imports: [RadioFieldComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RadioFieldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

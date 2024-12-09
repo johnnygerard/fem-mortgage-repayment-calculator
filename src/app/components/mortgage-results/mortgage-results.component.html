@@ -1,0 +1,40 @@
+@if (results(); as output) {
+  <div>
+    <h1 class="text-preset-2 text-white">Your results</h1>
+    <p class="mb-300 mt-200 tb:mb-500">
+      Your results are shown below based on the information you provided. To
+      adjust the results, edit the form and click “calculate repayments” again.
+    </p>
+    <div
+      class="rounded-[0.5rem] bg-[#00000040] px-200 py-300 shadow-[0_4px_inset] shadow-lime tb:p-400"
+    >
+      <p>
+        {{
+          output.interestOnly
+            ? "Your average monthly interest"
+            : "Your monthly repayments"
+        }}
+      </p>
+      <p class="mt-100 text-preset-1-mb text-lime tb:text-preset-1">
+        {{ output.monthly | currency: "GBP" }}
+      </p>
+      <hr class="my-200 text-[#9ABED540] tb:my-400" />
+      <p>
+        {{ output.interestOnly ? "Total interest" : "Total" }} you'll repay over
+        the term
+      </p>
+      <p class="mt-100 text-preset-2 text-white">
+        {{ output.total | currency: "GBP" }}
+      </p>
+    </div>
+  </div>
+} @else {
+  <div class="flex flex-col items-center gap-200 text-center">
+    <img src="/images/calculator.svg" alt="" width="193" height="192" />
+    <h1 class="text-preset-2 text-white">Results shown here</h1>
+    <p>
+      Complete the form and click “calculate repayments” to see what your
+      monthly repayments would be.
+    </p>
+  </div>
+}
