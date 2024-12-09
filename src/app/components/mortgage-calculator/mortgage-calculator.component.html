@@ -1,0 +1,41 @@
+<form [formGroup]="form" class="flex flex-col bg-white px-300 py-400 tb:p-500">
+  <div
+    class="flex flex-col items-start gap-100 tb:flex-row tb:items-center tb:justify-between"
+  >
+    <h1 class="text-preset-2 text-slate-900">Mortgage Calculator</h1>
+    <app-reset-button />
+  </div>
+  <div class="my-300 tb:my-500">
+    <app-number-field
+      [control]="form.controls.principal"
+      [unit]="{ symbol: '£', position: 'left' }"
+      label="Mortgage Amount"
+    />
+    <div class="my-300 flex flex-col gap-300 tb:flex-row">
+      <app-number-field
+        [control]="form.controls.term"
+        [unit]="{ symbol: 'years', position: 'right' }"
+        label="Mortgage Term"
+      />
+      <app-number-field
+        [control]="form.controls.interestRate"
+        [unit]="{ symbol: '%', position: 'right' }"
+        label="Interest Rate"
+      />
+    </div>
+    <div class="flex flex-col gap-150" role="group">
+      <p>Mortgage Type</p>
+      <app-radio-field
+        [control]="form.controls.chargeType"
+        [value]="CHARGE_TYPE.TOTAL"
+        label="Repayment"
+      />
+      <app-radio-field
+        [control]="form.controls.chargeType"
+        [value]="CHARGE_TYPE.INTEREST"
+        label="Interest Only"
+      />
+    </div>
+  </div>
+  <app-submit-button class="tb:self-start" />
+</form>
