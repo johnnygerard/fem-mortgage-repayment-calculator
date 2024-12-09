@@ -9,7 +9,7 @@ import {
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormControl, ReactiveFormsModule } from "@angular/forms";
-import { RadioIndicatorComponent } from "../radio-indicator/radio-indicator.component";
+import { RadioIndicatorComponent } from "./radio-indicator/radio-indicator.component";
 
 @Component({
   selector: "app-radio-field",
