@@ -27,4 +27,10 @@ export class NumberFieldComponent {
     symbol: string;
     position: "left" | "right";
   }>();
+
+  get showErrors(): boolean {
+    return (
+      this.control().invalid && (this.control().touched || this.control().dirty)
+    );
+  }
 }
