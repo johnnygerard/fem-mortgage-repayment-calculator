@@ -15,11 +15,7 @@ import { RadioIndicatorComponent } from "./radio-indicator/radio-indicator.compo
   selector: "app-radio-field",
   imports: [ReactiveFormsModule, RadioIndicatorComponent],
   templateUrl: "./radio-field.component.html",
-  styles: `
-    :host {
-      display: block;
-    }
-  `,
+  host: { class: "block" },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RadioFieldComponent implements OnInit {
