@@ -1,4 +1,4 @@
-<form [formGroup]="form" class="flex flex-col bg-white px-300 py-400 tb:p-500">
+<form [formGroup]="form" class="flex flex-col px-300 py-400 tb:p-500">
   <div
     class="flex flex-col items-start gap-100 tb:flex-row tb:items-center tb:justify-between"
   >
@@ -15,11 +15,13 @@
       <app-number-field
         [control]="form.controls.term"
         [unit]="{ symbol: 'years', position: 'right' }"
+        class="tb:min-w-0 tb:flex-1"
         label="Mortgage Term"
       />
       <app-number-field
         [control]="form.controls.interestRate"
         [unit]="{ symbol: '%', position: 'right' }"
+        class="tb:min-w-0 tb:flex-1"
         label="Interest Rate"
       />
     </div>
