@@ -58,6 +58,11 @@ export class NumberFieldComponent implements OnDestroy {
     this.#timeoutId = window.setTimeout(() => this.isActive.set(false), 1000);
   }
 
+  clearActiveState(): void {
+    clearTimeout(this.#timeoutId);
+    this.isActive.set(false);
+  }
+
   ngOnDestroy(): void {
     clearTimeout(this.#timeoutId);
   }
