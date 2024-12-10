@@ -1,6 +1,6 @@
 <label class="flex w-full flex-col gap-150">
   <span class="text-preset-4 text-slate-700">{{ label() }}</span>
-  <div
+  <span
     [class.flex-row-reverse]="unit().position === 'left'"
     [class]="
       showErrors
@@ -24,7 +24,7 @@
       class="flex-none px-200"
       >{{ unit().symbol }}</span
     >
-  </div>
+  </span>
   @if (showErrors) {
     <p class="text-preset-5 text-red">{{ control().errors! | error }}</p>
   }
