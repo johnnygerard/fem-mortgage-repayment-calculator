@@ -16,12 +16,6 @@ export default {
       "slate-900": "#133041",
       white: "#FFFFFF",
     },
-    extend: {
-      transitionProperty: {
-        bg: "background-color",
-        color: "color",
-      },
-    },
     fontFamily: {
       sans: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans],
     },
