@@ -8,7 +8,7 @@ import { MortgageResultsComponent } from "../../components/mortgage-results/mort
   templateUrl: "./home-page.component.html",
   host: {
     class:
-      "flex flex-col tb:rounded-[1.5rem] overflow-hidden dt:flex-row bg-white tb:max-tb:w-[43rem]",
+      "flex flex-col tb:rounded-[1.5rem] overflow-hidden dt:flex-row bg-white tb:max-tb:w-[43rem] shadow-[0_32px_64px_rgba(19,48,65,0.1)]",
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
