@@ -1,4 +1,8 @@
-<form [formGroup]="form" class="flex flex-col px-300 py-400 tb:p-500">
+<form
+  (ngSubmit)="onSubmit()"
+  [formGroup]="form"
+  class="flex flex-col px-300 py-400 tb:p-500"
+>
   <div
     class="flex flex-col items-start gap-100 tb:flex-row tb:items-center tb:justify-between"
   >
