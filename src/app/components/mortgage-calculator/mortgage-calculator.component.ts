@@ -9,6 +9,7 @@ import { MORTGAGE_LIMITS } from "../../constants/mortgage-limits";
 import { MortgageService } from "../../services/mortgage.service";
 import { CHARGE_TYPE, ChargeType } from "../../types/charge-type";
 import { MortgageInput } from "../../types/mortgage-input";
+import { showValidationErrors } from "../../utils/show-validation-errors";
 import { NumberFieldComponent } from "../number-field/number-field.component";
 import { RadioFieldComponent } from "../radio-field/radio-field.component";
 import { ResetButtonComponent } from "../reset-button/reset-button.component";
@@ -60,8 +61,8 @@ export class MortgageCalculatorComponent {
     chargeType: [null as ChargeType | null, [Validators.required]],
   });
 
-  showErrors(control: AbstractControl): boolean {
-    return control.invalid && (control.touched || control.dirty);
+  showErrors(control: AbstractControl, isFormSubmitted: boolean): boolean {
+    return showValidationErrors(control, isFormSubmitted);
   }
 
   onSubmit(): void {

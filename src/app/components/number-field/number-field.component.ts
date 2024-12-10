@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from "@angular/core";
 import { FormControl, ReactiveFormsModule } from "@angular/forms";
 import { ErrorPipe } from "../../pipes/error.pipe";
+import { showValidationErrors } from "../../utils/show-validation-errors";
 
 @Component({
   selector: "app-number-field",
@@ -27,6 +28,7 @@ export class NumberFieldComponent {
   max = input.required<number>();
   min = input.required<number>();
   step = input.required<number>();
+  isFormSubmitted = input.required<boolean>();
 
   unit = input.required<{
     symbol: string;
@@ -34,8 +36,6 @@ export class NumberFieldComponent {
   }>();
 
   get showErrors(): boolean {
-    return (
-      this.control().invalid && (this.control().touched || this.control().dirty)
-    );
+    return showValidationErrors(this.control(), this.isFormSubmitted());
   }
 }

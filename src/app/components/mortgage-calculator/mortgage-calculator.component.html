@@ -1,4 +1,5 @@
 <form
+  #ngForm="ngForm"
   (ngSubmit)="onSubmit()"
   (reset)="onReset()"
   [formGroup]="form"
@@ -13,6 +14,7 @@
   <div class="my-300 tb:my-500">
     <app-number-field
       [control]="form.controls.principal"
+      [isFormSubmitted]="ngForm.submitted"
       [max]="LIMITS.PRINCIPAL.MAX"
       [min]="LIMITS.PRINCIPAL.MIN"
       [step]="10000"
@@ -22,6 +24,7 @@
     <div class="my-300 flex flex-col gap-300 tb:flex-row">
       <app-number-field
         [control]="form.controls.term"
+        [isFormSubmitted]="ngForm.submitted"
         [max]="LIMITS.TERM.MAX"
         [min]="LIMITS.TERM.MIN"
         [step]="1"
@@ -31,6 +34,7 @@
       />
       <app-number-field
         [control]="form.controls.interestRate"
+        [isFormSubmitted]="ngForm.submitted"
         [max]="LIMITS.INTEREST_RATE.MAX"
         [min]="LIMITS.INTEREST_RATE.MIN"
         [step]="0.1"
@@ -51,7 +55,7 @@
         [value]="CHARGE_TYPE.INTEREST"
         label="Interest Only"
       />
-      @if (showErrors(form.controls.chargeType)) {
+      @if (showErrors(form.controls.chargeType, ngForm.submitted)) {
         <p class="text-preset-5 text-red">Please select a mortgage type</p>
       }
     </div>
