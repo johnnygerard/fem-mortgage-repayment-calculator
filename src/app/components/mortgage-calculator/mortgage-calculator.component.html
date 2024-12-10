@@ -46,6 +46,9 @@
         [value]="CHARGE_TYPE.INTEREST"
         label="Interest Only"
       />
+      @if (showErrors(form.controls.chargeType)) {
+        <p class="text-preset-5 text-red">Please select a mortgage type</p>
+      }
     </div>
   </div>
   <app-submit-button class="tb:self-start" />

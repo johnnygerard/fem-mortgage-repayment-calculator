@@ -1,5 +1,10 @@
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
-import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
+import {
+  AbstractControl,
+  FormBuilder,
+  ReactiveFormsModule,
+  Validators,
+} from "@angular/forms";
 import { MORTGAGE_LIMITS } from "../../constants/mortgage-limits";
 import { CHARGE_TYPE, ChargeType } from "../../types/charge-type";
 import { NumberFieldComponent } from "../number-field/number-field.component";
@@ -51,4 +56,8 @@ export class MortgageCalculatorComponent {
     chargeType: [null as ChargeType | null, [Validators.required]],
   });
   protected readonly CHARGE_TYPE = CHARGE_TYPE;
+
+  showErrors(control: AbstractControl): boolean {
+    return control.invalid && (control.touched || control.dirty);
+  }
 }
