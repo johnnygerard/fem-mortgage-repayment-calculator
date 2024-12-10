@@ -1,8 +1,14 @@
-export const MIN_PRINCIPAL = 1_000;
-export const MAX_PRINCIPAL = 1_000_000;
-
-export const MIN_TERM = 1;
-export const MAX_TERM = 100;
-
-export const MIN_INTEREST_RATE = 0.1;
-export const MAX_INTEREST_RATE = 10;
+export const MORTGAGE_LIMITS = {
+  PRINCIPAL: {
+    MIN: 10_000,
+    MAX: 10_000_000,
+  },
+  TERM: {
+    MIN: 1,
+    MAX: 50,
+  },
+  INTEREST_RATE: {
+    MIN: 0.1,
+    MAX: 10,
+  },
+} as const;

@@ -8,18 +8,27 @@
   <div class="my-300 tb:my-500">
     <app-number-field
       [control]="form.controls.principal"
+      [max]="LIMITS.PRINCIPAL.MAX"
+      [min]="LIMITS.PRINCIPAL.MIN"
+      [step]="10000"
       [unit]="{ symbol: '£', position: 'left' }"
       label="Mortgage Amount"
     />
     <div class="my-300 flex flex-col gap-300 tb:flex-row">
       <app-number-field
         [control]="form.controls.term"
+        [max]="LIMITS.TERM.MAX"
+        [min]="LIMITS.TERM.MIN"
+        [step]="1"
         [unit]="{ symbol: 'years', position: 'right' }"
         class="tb:min-w-0 tb:flex-1"
         label="Mortgage Term"
       />
       <app-number-field
         [control]="form.controls.interestRate"
+        [max]="LIMITS.INTEREST_RATE.MAX"
+        [min]="LIMITS.INTEREST_RATE.MIN"
+        [step]="0.1"
         [unit]="{ symbol: '%', position: 'right' }"
         class="tb:min-w-0 tb:flex-1"
         label="Interest Rate"

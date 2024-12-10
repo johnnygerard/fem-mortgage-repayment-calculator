@@ -23,6 +23,10 @@ import { FormControl, ReactiveFormsModule } from "@angular/forms";
 export class NumberFieldComponent {
   control = input.required<FormControl>();
   label = input.required<string>();
+  max = input.required<number>();
+  min = input.required<number>();
+  step = input.required<number>();
+
   unit = input.required<{
     symbol: string;
     position: "left" | "right";

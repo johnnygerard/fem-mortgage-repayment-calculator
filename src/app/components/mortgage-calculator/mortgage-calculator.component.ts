@@ -1,10 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
-import {
-  NonNullableFormBuilder,
-  ReactiveFormsModule,
-  Validators,
-} from "@angular/forms";
-import { CHARGE_TYPE } from "../../types/charge-type";
+import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
+import { MORTGAGE_LIMITS } from "../../constants/mortgage-limits";
+import { CHARGE_TYPE, ChargeType } from "../../types/charge-type";
 import { NumberFieldComponent } from "../number-field/number-field.component";
 import { RadioFieldComponent } from "../radio-field/radio-field.component";
 import { ResetButtonComponent } from "../reset-button/reset-button.component";
@@ -24,11 +21,34 @@ import { SubmitButtonComponent } from "../submit-button/submit-button.component"
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MortgageCalculatorComponent {
-  form = inject(NonNullableFormBuilder).group({
-    principal: ["", [Validators.required]],
-    term: ["", [Validators.required]],
-    interestRate: ["", [Validators.required]],
-    chargeType: ["", [Validators.required]],
+  readonly LIMITS = MORTGAGE_LIMITS;
+
+  form = inject(FormBuilder).group({
+    principal: [
+      null as number | null,
+      [
+        Validators.required,
+        Validators.min(this.LIMITS.PRINCIPAL.MIN),
+        Validators.max(this.LIMITS.PRINCIPAL.MAX),
+      ],
+    ],
+    term: [
+      null as number | null,
+      [
+        Validators.required,
+        Validators.min(this.LIMITS.TERM.MIN),
+        Validators.max(this.LIMITS.TERM.MAX),
+      ],
+    ],
+    interestRate: [
+      null as number | null,
+      [
+        Validators.required,
+        Validators.min(this.LIMITS.INTEREST_RATE.MIN),
+        Validators.max(this.LIMITS.INTEREST_RATE.MAX),
+      ],
+    ],
+    chargeType: [null as ChargeType | null, [Validators.required]],
   });
   protected readonly CHARGE_TYPE = CHARGE_TYPE;
 }
