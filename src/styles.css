@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Disable all CSS transitions if the user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    @apply !transition-none;
+  }
+}
