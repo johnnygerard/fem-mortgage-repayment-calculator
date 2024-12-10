@@ -25,4 +25,7 @@
       >{{ unit().symbol }}</span
     >
   </div>
+  @if (showErrors) {
+    <p class="mt-150 text-preset-5 text-red">{{ control().errors! | error }}</p>
+  }
 </label>

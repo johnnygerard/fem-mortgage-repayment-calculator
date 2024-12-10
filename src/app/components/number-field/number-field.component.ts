@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, input } from "@angular/core";
 import { FormControl, ReactiveFormsModule } from "@angular/forms";
+import { ErrorPipe } from "../../pipes/error.pipe";
 
 @Component({
   selector: "app-number-field",
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ErrorPipe],
   templateUrl: "./number-field.component.html",
   host: { class: "block" },
   styles: `
