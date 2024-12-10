@@ -5,11 +5,15 @@
     [class]="
       showErrors
         ? 'border-red bg-red'
-        : 'border-slate-500 bg-slate-100 hover:border-slate-900'
+        : isActive()
+          ? 'border-lime bg-lime'
+          : 'border-slate-500 bg-slate-100 hover:border-slate-900'
     "
     class="flex h-[3rem] items-center overflow-hidden rounded border text-preset-3 transition-colors duration-300 ease-out"
   >
     <input
+      (focus)="refreshActiveState()"
+      (input)="refreshActiveState()"
       [formControl]="control()"
       [max]="max()"
       [min]="min()"
@@ -18,7 +22,13 @@
       type="number"
     />
     <span
-      [class]="showErrors ? 'text-white' : 'text-slate-700'"
+      [class]="
+        showErrors
+          ? 'text-white'
+          : isActive()
+            ? 'text-slate-900'
+            : 'text-slate-700'
+      "
       class="flex-none px-200 transition-colors duration-300 ease-out"
       >{{ unit().symbol }}</span
     >
