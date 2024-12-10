@@ -28,6 +28,7 @@ import { SubmitButtonComponent } from "../submit-button/submit-button.component"
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MortgageCalculatorComponent {
+  readonly CHARGE_TYPE = CHARGE_TYPE;
   readonly LIMITS = MORTGAGE_LIMITS;
   mortgageService = inject(MortgageService);
 
@@ -58,7 +59,6 @@ export class MortgageCalculatorComponent {
     ],
     chargeType: [null as ChargeType | null, [Validators.required]],
   });
-  protected readonly CHARGE_TYPE = CHARGE_TYPE;
 
   showErrors(control: AbstractControl): boolean {
     return control.invalid && (control.touched || control.dirty);
