@@ -1,4 +1,4 @@
-<label class="w-full">
+<label class="flex w-full flex-col gap-150">
   <span class="text-preset-4 text-slate-700">{{ label() }}</span>
   <div
     [class.flex-row-reverse]="unit().position === 'left'"
@@ -7,7 +7,7 @@
         ? 'border-red bg-red'
         : 'border-slate-500 bg-slate-100 focus-within:!border-lime focus-within:bg-lime hover:border-slate-900'
     "
-    class="mt-150 flex h-[3rem] items-center overflow-hidden rounded border text-preset-3"
+    class="flex h-[3rem] items-center overflow-hidden rounded border text-preset-3"
   >
     <input
       [formControl]="control()"
@@ -26,6 +26,6 @@
     >
   </div>
   @if (showErrors) {
-    <p class="mt-150 text-preset-5 text-red">{{ control().errors! | error }}</p>
+    <p class="text-preset-5 text-red">{{ control().errors! | error }}</p>
   }
 </label>
