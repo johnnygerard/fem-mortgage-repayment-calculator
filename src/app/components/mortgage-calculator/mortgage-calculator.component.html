@@ -56,7 +56,9 @@
         label="Interest Only"
       />
       @if (showErrors(form.controls.chargeType, ngForm["submitted"])) {
-        <p class="text-preset-5 text-red">Please select a mortgage type</p>
+        <p @validationMessage class="text-preset-5 text-red">
+          Please select a mortgage type
+        </p>
       }
     </div>
   </div>

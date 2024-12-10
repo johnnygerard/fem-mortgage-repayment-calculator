@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from "@angular/animations";
 import { ChangeDetectionStrategy, Component, input } from "@angular/core";
 import { FormControl, ReactiveFormsModule } from "@angular/forms";
 import { ErrorPipe } from "../../pipes/error.pipe";
@@ -21,6 +22,11 @@ import { showValidationErrors } from "../../utils/show-validation-errors";
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [
+    trigger("validationMessage", [
+      transition(":enter", [style({ opacity: 0 }), animate("300ms ease-out")]),
+    ]),
+  ],
 })
 export class NumberFieldComponent {
   control = input.required<FormControl>();

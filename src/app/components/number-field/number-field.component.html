@@ -26,6 +26,8 @@
     >
   </span>
   @if (showErrors) {
-    <p class="text-preset-5 text-red">{{ control().errors! | error }}</p>
+    <p @validationMessage class="text-preset-5 text-red">
+      {{ control().errors! | error }}
+    </p>
   }
 </label>
