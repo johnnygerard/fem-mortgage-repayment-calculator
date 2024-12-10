@@ -5,8 +5,8 @@ the [Mortgage repayment calculator challenge](https://www.frontendmentor.io/chal
 from [Frontend Mentor](https://www.frontendmentor.io/).
 
 ![project status](https://img.shields.io/badge/status-work%20in%20progress-red?style=for-the-badge)
-![live demo](https://img.shields.io/badge/live_demo-blue?style=for-the-badge)
-![Lighthouse report](https://img.shields.io/badge/lighthouse-%23F44B21?style=for-the-badge&logo=lighthouse&logoColor=fff)
+[![live demo](https://img.shields.io/badge/live_demo-blue?style=for-the-badge)](https://fem-mortgage-repayment-calculator-jgerard.vercel.app/)
+[![Lighthouse report](https://img.shields.io/badge/lighthouse-%23F44B21?style=for-the-badge&logo=lighthouse&logoColor=fff)](https://googlechrome.github.io/lighthouse/viewer/?gist=2e74b1e09d4b6168140eb0b9eff69221)
 
 ## Tech Stack
 
@@ -18,6 +18,11 @@ from [Frontend Mentor](https://www.frontendmentor.io/).
 ### Backend
 
 - **CDN**: Static assets served from [Vercel Edge Network](https://vercel.com/docs/edge-network/overview).
+
+## Testing
+
+- **Unit Tests**: [Jasmine](https://jasmine.github.io/)
+- **E2E Tests**: [Playwright](https://playwright.dev/)
 
 ## Dev Environment & Tools
 
@@ -31,11 +36,15 @@ from [Frontend Mentor](https://www.frontendmentor.io/).
 
 ### Mobile Home Page
 
-![mobile home page](docs/screenshots/mobile.png)
+![mobile home page](docs/screenshots/mobile.avif)
+
+### Tablet Home Page
+
+![tablet home page](docs/screenshots/tablet.avif)
 
 ### Desktop Home Page
 
-![desktop home page](docs/screenshots/desktop.png)
+![desktop home page](docs/screenshots/desktop.avif)
 
 ## Copyright
 
