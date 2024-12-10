@@ -1,31 +1,42 @@
 <label class="flex w-full flex-col gap-150">
   <span class="text-preset-4 text-slate-700">{{ label() }}</span>
-  <div
+  <span
     [class.flex-row-reverse]="unit().position === 'left'"
     [class]="
       showErrors
         ? 'border-red bg-red'
-        : 'border-slate-500 bg-slate-100 focus-within:!border-lime focus-within:bg-lime hover:border-slate-900'
+        : isActive()
+          ? 'border-lime bg-lime'
+          : 'border-slate-500 bg-slate-100 hover:border-slate-900'
     "
-    class="flex h-[3rem] items-center overflow-hidden rounded border text-preset-3"
+    class="flex h-[3rem] items-center overflow-hidden rounded border text-preset-3 transition-colors"
   >
     <input
+      (blur)="clearActiveState()"
+      (focus)="refreshActiveState()"
+      (input)="refreshActiveState()"
       [formControl]="control()"
       [max]="max()"
       [min]="min()"
       [step]="step()"
-      class="peer h-full min-w-0 flex-1 px-200 outline-none"
+      class="h-full min-w-0 flex-1 px-200 text-slate-900 outline-none"
       type="number"
     />
     <span
       [class]="
-        showErrors ? 'text-white' : 'text-slate-700 peer-focus:text-slate-900'
+        showErrors
+          ? 'text-white'
+          : isActive()
+            ? 'text-slate-900'
+            : 'text-slate-700'
       "
-      class="flex-none px-200"
+      class="flex-none px-200 transition-colors"
       >{{ unit().symbol }}</span
     >
-  </div>
+  </span>
   @if (showErrors) {
-    <p class="text-preset-5 text-red">{{ control().errors! | error }}</p>
+    <p @validationMessage class="text-preset-5 text-red">
+      {{ control().errors! | error }}
+    </p>
   }
 </label>

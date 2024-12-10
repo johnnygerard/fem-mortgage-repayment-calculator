@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from "@angular/animations";
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import {
   AbstractControl,
@@ -27,6 +28,11 @@ import { SubmitButtonComponent } from "../submit-button/submit-button.component"
   templateUrl: "./mortgage-calculator.component.html",
   host: { class: "block" },
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [
+    trigger("validationMessage", [
+      transition(":enter", [style({ opacity: 0 }), animate("300ms ease-out")]),
+    ]),
+  ],
 })
 export class MortgageCalculatorComponent {
   readonly CHARGE_TYPE = CHARGE_TYPE;

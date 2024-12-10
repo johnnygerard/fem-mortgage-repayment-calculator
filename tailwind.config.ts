@@ -16,12 +16,6 @@ export default {
       "slate-900": "#133041",
       white: "#FFFFFF",
     },
-    extend: {
-      transitionProperty: {
-        bg: "background-color",
-        color: "color",
-      },
-    },
     fontFamily: {
       sans: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans],
     },
@@ -91,11 +85,16 @@ export default {
       400: "2rem",
       500: "2.5rem",
     },
+    transitionDuration: {
+      DEFAULT: "300ms",
+    },
+    transitionTimingFunction: {
+      DEFAULT: "ease-out",
+    },
   },
   plugins: [
     plugin(({ addVariant }) => {
-      addVariant("hocus", ["&:hover", "&:focus"]);
-      addVariant("hocus-visible", ["&:hover", "&:focus-visible"]);
+      addVariant("hocus", ["&:hover", "&:focus-visible"]);
     }),
   ],
 } satisfies Config;
