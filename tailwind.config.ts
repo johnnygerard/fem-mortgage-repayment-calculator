@@ -94,8 +94,7 @@ export default {
   },
   plugins: [
     plugin(({ addVariant }) => {
-      addVariant("hocus", ["&:hover", "&:focus"]);
-      addVariant("hocus-visible", ["&:hover", "&:focus-visible"]);
+      addVariant("hocus", ["&:hover", "&:focus-visible"]);
     }),
   ],
 } satisfies Config;
