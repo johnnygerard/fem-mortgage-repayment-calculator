@@ -1,13 +1,7 @@
 import { TestBed } from "@angular/core/testing";
 import { faker } from "@faker-js/faker";
-import {
-  MAX_INTEREST_RATE,
-  MAX_PRINCIPAL,
-  MAX_TERM,
-  MIN_INTEREST_RATE,
-  MIN_PRINCIPAL,
-  MIN_TERM,
-} from "../constants/mortgage-limits";
+import { MORTGAGE_LIMITS as LIMITS } from "../constants/mortgage-limits";
+import { CHARGE_TYPE } from "../types/charge-type";
 import { MortgageCalculatorService } from "./mortgage-calculator.service";
 
 describe("MortgageCalculatorService", () => {
@@ -24,19 +18,22 @@ describe("MortgageCalculatorService", () => {
 
   it("should compute the monthly repayments", () => {
     const principal = faker.number.int({
-      min: MIN_PRINCIPAL,
-      max: MAX_PRINCIPAL,
+      min: LIMITS.PRINCIPAL.MIN,
+      max: LIMITS.PRINCIPAL.MAX,
     });
-    const term = faker.number.int({ min: MIN_TERM, max: MAX_TERM });
+    const term = faker.number.int({
+      min: LIMITS.TERM.MIN,
+      max: LIMITS.TERM.MAX,
+    });
     const interestRate = faker.number.float({
-      min: MIN_INTEREST_RATE,
-      max: MAX_INTEREST_RATE,
+      min: LIMITS.INTEREST_RATE.MIN,
+      max: LIMITS.INTEREST_RATE.MAX,
     });
     const { monthly, total } = service.compute({
       principal,
       term,
       interestRate,
-      interestOnly: false,
+      chargeType: CHARGE_TYPE.TOTAL,
     });
 
     expect(monthly * term * 12).toBeCloseTo(total);

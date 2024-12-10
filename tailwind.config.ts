@@ -19,6 +19,7 @@ export default {
     extend: {
       transitionProperty: {
         bg: "background-color",
+        color: "color",
       },
     },
     fontFamily: {

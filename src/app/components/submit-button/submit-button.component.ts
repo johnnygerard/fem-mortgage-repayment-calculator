@@ -4,11 +4,7 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
   selector: "app-submit-button",
   imports: [],
   templateUrl: "./submit-button.component.html",
-  styles: `
-    :host {
-      display: block;
-    }
-  `,
+  host: { class: "block" },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SubmitButtonComponent {}

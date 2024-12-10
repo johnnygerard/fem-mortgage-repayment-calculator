@@ -10,7 +10,7 @@
     >
       <p>
         {{
-          output.interestOnly
+          output.chargeType === CHARGE_TYPE.INTEREST
             ? "Your average monthly interest"
             : "Your monthly repayments"
         }}
@@ -20,8 +20,12 @@
       </p>
       <hr class="my-200 text-[#9ABED540] tb:my-400" />
       <p>
-        {{ output.interestOnly ? "Total interest" : "Total" }} you'll repay over
-        the term
+        {{
+          output.chargeType === CHARGE_TYPE.INTEREST
+            ? "Total interest"
+            : "Total"
+        }}
+        you'll repay over the term
       </p>
       <p class="mt-100 text-preset-2 text-white">
         {{ output.total | currency: "GBP" }}
