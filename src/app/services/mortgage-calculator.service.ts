@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { CHARGE_TYPE } from "../types/charge-type";
 import { MortgageInput } from "../types/mortgage-input";
 import { MortgageOutput } from "../types/mortgage-output";
 
@@ -10,7 +11,7 @@ export class MortgageCalculatorService {
     principal,
     term,
     interestRate,
-    interestOnly,
+    chargeType,
   }: MortgageInput): MortgageOutput {
     const monthlyInterestRate = interestRate / 100 / 12;
     const months = term * 12;
@@ -21,19 +22,19 @@ export class MortgageCalculatorService {
       (Math.pow(1 + monthlyInterestRate, months) - 1);
     const totalRepayment = monthlyRepayment * months;
 
-    if (interestOnly) {
+    if (chargeType === CHARGE_TYPE.INTEREST) {
       const totalInterest = totalRepayment - principal;
       return {
         monthly: totalInterest / months,
         total: totalInterest,
-        interestOnly,
+        chargeType,
       };
     }
 
     return {
       monthly: monthlyRepayment,
       total: totalRepayment,
-      interestOnly,
+      chargeType,
     };
   }
 }

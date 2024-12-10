@@ -1,6 +1,7 @@
 import { CurrencyPipe } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { MortgageService } from "../../services/mortgage.service";
+import { CHARGE_TYPE } from "../../types/charge-type";
 
 @Component({
   selector: "app-mortgage-results",
@@ -14,4 +15,5 @@ import { MortgageService } from "../../services/mortgage.service";
 })
 export class MortgageResultsComponent {
   results = inject(MortgageService).results;
+  readonly CHARGE_TYPE = CHARGE_TYPE;
 }

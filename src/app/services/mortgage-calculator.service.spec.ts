@@ -1,6 +1,7 @@
 import { TestBed } from "@angular/core/testing";
 import { faker } from "@faker-js/faker";
 import { MORTGAGE_LIMITS as LIMITS } from "../constants/mortgage-limits";
+import { CHARGE_TYPE } from "../types/charge-type";
 import { MortgageCalculatorService } from "./mortgage-calculator.service";
 
 describe("MortgageCalculatorService", () => {
@@ -32,7 +33,7 @@ describe("MortgageCalculatorService", () => {
       principal,
       term,
       interestRate,
-      interestOnly: false,
+      chargeType: CHARGE_TYPE.TOTAL,
     });
 
     expect(monthly * term * 12).toBeCloseTo(total);
