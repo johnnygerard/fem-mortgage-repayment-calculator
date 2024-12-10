@@ -5,7 +5,7 @@
     [class]="
       showErrors
         ? 'border-red bg-red'
-        : 'border-slate-500 bg-slate-100 focus-within:!border-lime focus-within:bg-lime hover:border-slate-900'
+        : 'border-slate-500 bg-slate-100 hover:border-slate-900'
     "
     class="flex h-[3rem] items-center overflow-hidden rounded border text-preset-3 transition-colors duration-300 ease-out"
   >
@@ -14,13 +14,11 @@
       [max]="max()"
       [min]="min()"
       [step]="step()"
-      class="peer h-full min-w-0 flex-1 px-200 text-slate-900 outline-none"
+      class="h-full min-w-0 flex-1 px-200 text-slate-900 outline-none"
       type="number"
     />
     <span
-      [class]="
-        showErrors ? 'text-white' : 'text-slate-700 peer-focus:text-slate-900'
-      "
+      [class]="showErrors ? 'text-white' : 'text-slate-700'"
       class="flex-none px-200 transition-colors duration-300 ease-out"
       >{{ unit().symbol }}</span
     >
