@@ -68,4 +68,8 @@ export class MortgageCalculatorComponent {
     if (!this.form.valid) return;
     this.mortgageService.requestResults(this.form.value as MortgageInput);
   }
+
+  onReset(): void {
+    this.mortgageService.clearResults();
+  }
 }
