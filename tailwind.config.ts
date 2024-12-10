@@ -85,6 +85,12 @@ export default {
       400: "2rem",
       500: "2.5rem",
     },
+    transitionDuration: {
+      DEFAULT: "300ms",
+    },
+    transitionTimingFunction: {
+      DEFAULT: "ease-out",
+    },
   },
   plugins: [
     plugin(({ addVariant }) => {
