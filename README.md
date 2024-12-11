@@ -4,7 +4,7 @@ This is my solution to
 the [Mortgage repayment calculator challenge](https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73)
 from [Frontend Mentor](https://www.frontendmentor.io/).
 
-![project status](https://img.shields.io/badge/status-work%20in%20progress-red?style=for-the-badge)
+[![project status](https://img.shields.io/badge/status-solution%20published-success?style=for-the-badge)](https://www.frontendmentor.io/solutions/mortgage-repayment-calculator-hlA7iQt7Ov)
 [![live demo](https://img.shields.io/badge/live_demo-blue?style=for-the-badge)](https://fem-mortgage-repayment-calculator-jgerard.vercel.app/)
 [![Lighthouse report](https://img.shields.io/badge/lighthouse-%23F44B21?style=for-the-badge&logo=lighthouse&logoColor=fff)](https://googlechrome.github.io/lighthouse/viewer/?gist=2e74b1e09d4b6168140eb0b9eff69221)
 
